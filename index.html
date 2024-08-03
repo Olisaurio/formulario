@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Básico</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> </script>
+    <title>Formulario de Contacto</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
@@ -12,62 +12,82 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
         form {
             background: white;
-            width: 40vh;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 30px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #555;
         }
         .form-group input,
         .form-group textarea {
-            width: 90%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #667eea;
+            outline: none;
         }
         .form-group textarea {
             resize: vertical;
+            min-height: 100px;
         }
         .form-group button {
-            width: 95%;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
         .form-group button:hover {
-            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <form id="formIndex" action="#" method="POST">
+        <h2>Contáctanos</h2>
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="name" name="nombre" required>
+            <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
             <label for="correo">Correo:</label>
-            <input type="email" id="email" name="correo" required>
+            <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="messaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="message" rows="5" required></textarea>
         </div>
         <div class="form-group">
             <button type="submit">Enviar</button>
